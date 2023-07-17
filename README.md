@@ -1,2 +1,1 @@
-# storage
-Novemberizing's node storage lib
+TODO: REST 방식의 스토리지...

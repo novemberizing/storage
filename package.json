@@ -1,0 +1,20 @@
+{
+  "name": "@novemberizing/storage",
+  "version": "0.0.31",
+  "description": "",
+  "main": "./src/index.js",
+  "type": "module",
+  "scripts": {
+    "test": "mocha --recursive"
+  },
+  "author": "novemberizing <novemberizing@gmail.com>",
+  "license": "MPL-2.0",
+  "dependencies": {
+    "@novemberizing/log": "^0.0.9",
+    "lodash": "^4.17.21",
+    "mysql2": "^3.5.0"
+  },
+  "devDependencies": {
+    "mocha": "^10.2.0"
+  }
+}
