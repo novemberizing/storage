@@ -4,6 +4,20 @@
   "description": "",
   "main": "./src/index.js",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/novemberizing/storage.git"
+  },
+  "bugs": {
+    "url": "https://gitlab.com/novemberizing/storage/issues"
+  },
+  "keywords": [
+    "novemberizing",
+    "nodejs",
+    "javascript",
+    "storage"
+  ],
+  "homepage": "https://novemberizing.github.io/storage",
   "scripts": {
     "test": "mocha --recursive",
     "doc": "jsdoc -c jsdoc.json"
