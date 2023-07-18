@@ -1,7 +1,17 @@
+/**
+ * @module      StorageExtension
+ */
 import Log from "@novemberizing/log";
 
 import StorageExceptionUninitialized from "./exception/Uninitialized.js";
+import StorageAdapter from "./Adapter.js";
 
+/**
+ * @class
+ * 
+ * An extension object that defines commands to be additionally used by the client
+ * 
+ */
 export default class StorageExtension {
     static #tag = "StorageExtension";
 
@@ -10,6 +20,12 @@ export default class StorageExtension {
 
     get url(){ return this.#url; }
 
+    /**
+     * Create a storage extension object
+     * 
+     * @param {Object}          url         URL containing storage information
+     * @param {StorageAdapter}  adapter     Storage adapter object
+     */
     constructor(url, adapter) {
         Log.v(StorageExtension.#tag, `constructor(${url}, ${adapter})`);
 
@@ -21,6 +37,13 @@ export default class StorageExtension {
         this.#adapter = adapter;
     }
 
+    /**
+     * Executes commands to storage
+     * 
+     * @param   {*}         sql         command
+     * @param   {...any}    args        arguments
+     * @return  Object                  result
+     */
     async query(sql, ...args) {
         Log.v(StorageExtension.#tag, `query(${JSON.stringify(sql)}, ${JSON.stringify(args)})`);
 

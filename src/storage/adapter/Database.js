@@ -1,9 +1,19 @@
+/**
+ * @module          StorageAdapterDatabase
+ */
 import _ from "lodash";
 
 import Log from "@novemberizing/log";
 
 import StorageAdapter from "../Adapter.js";
 
+/**
+ * @class
+ * 
+ * Storage Adapter Database
+ * 
+ * A class that abstracts a database adapter
+ */
 export default class StorageAdapterDatabase extends StorageAdapter {
     static #tag = "StorageAdapterDatabase";
     
@@ -17,6 +27,12 @@ export default class StorageAdapterDatabase extends StorageAdapter {
     get port(){ return this.#port; }
     get database(){ return this.#database; }
 
+    /**
+     * Database adapter abstract class constructor
+     * 
+     * @param {URL}     url         Storage access information URL
+     * @param {Object}  config      Additional information to create an adapter that uses storage located at the URL
+     */
     constructor(url, config = undefined) {
         super(url, config);
 

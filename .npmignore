@@ -1,4 +1,6 @@
-novemberizing.log
-storage.json
-configure
-configure.json
+/novemberizing.log
+/storage.json
+/configure
+/configure.json
+/jsdoc.json
+/docs

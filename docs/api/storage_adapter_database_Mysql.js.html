@@ -1,4 +1,32 @@
-/**
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: storage/adapter/database/Mysql.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: storage/adapter/database/Mysql.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
  * @module          StorageAdapterDatabaseMysql
  */
 import Log from "@novemberizing/log";
@@ -40,7 +68,7 @@ export default class StorageAdapterDatabaseMysql extends StorageAdapterDatabase 
             if(Array.isArray(result[1][0])) {
                 result = result[1].reduce((accumulator, current, index) => {
                     if(current !== undefined) {
-                        if(result[0][index] && result[0][index].length === 1) {
+                        if(result[0][index] &amp;&amp; result[0][index].length === 1) {
                             accumulator.push(result[0][index][0]);
                         } else {
                             accumulator.push(result[0][index]);
@@ -48,16 +76,16 @@ export default class StorageAdapterDatabaseMysql extends StorageAdapterDatabase 
                     }
                     return accumulator;
                 }, []);
-                if(Array.isArray(result) && result.length <= 1) {
+                if(Array.isArray(result) &amp;&amp; result.length &lt;= 1) {
                     result = result[0];
-                    if(Array.isArray(result) && result.length <= 1) {
+                    if(Array.isArray(result) &amp;&amp; result.length &lt;= 1) {
                         result = result[0];
                     }
                     return result;
                 }
                 return result;
             } else {
-                return (Array.isArray(result[0]) && result[0].length <= 1) ? result[0][0] : result[0];
+                return (Array.isArray(result[0]) &amp;&amp; result[0].length &lt;= 1) ? result[0][0] : result[0];
             }
         } else {
             return true;
@@ -115,13 +143,6 @@ export default class StorageAdapterDatabaseMysql extends StorageAdapterDatabase 
         this.#pool = StorageAdapterDatabaseMysql.#open(this.user, this.host, this.port, this.database, this.#password);
     }
 
-    /**
-     * It performs a query and returns the result.
-     * 
-     * @param   {String} sql        command
-     * @param   {...any} args       argument
-     * @returns                     result
-     */
     async query(sql, ...args) {
         Log.v(StorageAdapterDatabaseMysql.#tag, `query(${JSON.stringify(sql)}, ${JSON.stringify(args)})`);
 
@@ -149,12 +170,31 @@ export default class StorageAdapterDatabaseMysql extends StorageAdapterDatabase 
         }
     }
 
-    /**
-     * Close adapter
-     */
     async close() {
         Log.v(StorageAdapterDatabaseMysql.#tag, `close()`);
 
         StorageAdapterDatabaseMysql.#close(this.user, this.host, this.port, this.database);
     }
-}
+}</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-Storage.html">Storage</a></li><li><a href="module-StorageAdapter.html">StorageAdapter</a></li><li><a href="module-StorageAdapterDatabase.html">StorageAdapterDatabase</a></li><li><a href="module-StorageAdapterDatabaseMysql.html">StorageAdapterDatabaseMysql</a></li><li><a href="module-StorageAdapterFactory.html">StorageAdapterFactory</a></li><li><a href="module-StorageAdapterFile.html">StorageAdapterFile</a></li><li><a href="module-StorageAdapterMemory.html">StorageAdapterMemory</a></li><li><a href="module-StorageExtension.html">StorageExtension</a></li><li><a href="module-StorageExtensionConfig.html">StorageExtensionConfig</a></li><li><a href="module-StorageExtensionFactory.html">StorageExtensionFactory</a></li><li><a href="module-StorageExtensionJson.html">StorageExtensionJson</a></li></ul><h3>Classes</h3><ul><li><a href="module-Storage.html">Storage</a></li><li><a href="module-StorageAdapter.html">StorageAdapter</a></li><li><a href="module-StorageAdapterDatabase.html">StorageAdapterDatabase</a></li><li><a href="module-StorageAdapterDatabaseMysql.html">StorageAdapterDatabaseMysql</a></li><li><a href="module-StorageAdapterFactory.html">StorageAdapterFactory</a></li><li><a href="module-StorageAdapterFile.html">StorageAdapterFile</a></li><li><a href="module-StorageAdapterMemory.html">StorageAdapterMemory</a></li><li><a href="module-StorageExtension.html">StorageExtension</a></li><li><a href="module-StorageExtensionConfig.html">StorageExtensionConfig</a></li><li><a href="module-StorageExtensionFactory.html">StorageExtensionFactory</a></li><li><a href="module-StorageExtensionJson.html">StorageExtensionJson</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Tue Jul 18 2023 10:23:39 GMT+0900 (대한민국 표준시)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
