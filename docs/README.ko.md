@@ -43,7 +43,7 @@ npm install --save @novemberizing/storage
 URL이 명시된 스토리지 객체를 생성하고, 명령을 수행할 수 있습니다.
 
 ```js
-const o = new Storage("fs://./configure.json");
+const o = new Storage({ url:"fs://./configure.json" });
 
 console.log(o.set("hello", "world"));
 console.log(o.get(""));

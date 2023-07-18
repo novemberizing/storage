@@ -43,7 +43,7 @@ npm install --save @novemberizing/storage
 You can create storage objects with URL and execute commands.
 
 ```js
-const o = new Storage("fs://./configure.json");
+const o = new Storage({ url:"fs://./configure.json" });
 
 console.log(o.set("hello", "world"));
 console.log(o.get(""));
