@@ -1,4 +1,4 @@
-name: Novemberizing log package.
+name: Novemberizing storage package.
 
 on:
   release:
