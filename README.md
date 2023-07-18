@@ -133,4 +133,4 @@ console.log(mysql.del("hello"));
 
 ### DOCUMENT
 
-[Novemberizing log api](https://novemberizing.github.io/storage/api)
+[Novemberizing storage api](https://novemberizing.github.io/storage/api)

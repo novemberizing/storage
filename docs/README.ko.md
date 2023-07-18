@@ -131,6 +131,6 @@ console.log(mysql.get(""));
 console.log(mysql.del("hello"));
 ```
 
-### Document
+### 문서
 
-[Novemberizing log api](https://novemberizing.github.io/storage/api)
+[Novemberizing storage api](https://novemberizing.github.io/storage/api)
